@@ -43,14 +43,14 @@ function draw() {
 
   // display all
   for(var x=0; x<particles.length; x=x++){
-    particles[j].display();
+    particles[x].display();
   }
 
   for(var y=0; y<plinkos.length; y=y++){
-    plinkos[j].display();
+    plinkos[y].display();
   }
 
   for(var z=0; z<particles.length; z=z++){
-    divisions[j].display();
+    divisions[z].display();
   }
 }
