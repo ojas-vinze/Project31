@@ -1,4 +1,7 @@
-
+const Engine = Matter.Engine;
+const World = Matter.World;
+const Bodies = Matter.Bodies;
+const Body = Matter.Body;
 
 var divisionh = 300;
 
@@ -9,7 +12,8 @@ var particles=[];
 function setup() {
   createCanvas(800,400);
 
-  
+  engine = Engine.create();
+	world = engine.world;
 
 
 }
@@ -21,16 +25,16 @@ function draw() {
     divisions.push(new Division(k,height-divisionh/2,10,divisionh));
   }
   // row 1
-  for(var a=40; j<=width; j=j+50){
-    plinkos.push(new Plinko(j,75,10));
+  for(var a=40; a<=width; a=a+50){
+    plinkos.push(new Plinko(a,75,10));
   }
   // row 2
-  for(var b=15; i<=width; j=j+50){
-    plinkos.push(new Plinko(i,175,10));
+  for(var b=15; b<=width; b=b+50){
+    plinkos.push(new Plinko(b,175,10));
   }  
   // row 3
-  for(var c=40; g<=width; g=g+50){
-    plinkos.push(new Plinko(g,275,10));
+  for(var c=40; c<=width; c=c+50){
+    plinkos.push(new Plinko(c,275,10));
   }
   // row 4
   for(var d=15; d<=width; d=d+50){
