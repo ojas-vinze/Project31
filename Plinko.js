@@ -1,8 +1,7 @@
 class Plinko{
-    
     constructor(x,y,r){
         var options = {
-            restitution:0.4
+            isStatic:true
         }
         this.x=x
         this.y=y
@@ -12,11 +11,8 @@ class Plinko{
 
     display(){
         var ppos = this.body.position;
-        push();
-        translate(ppos.x,ppos.y);
-        ellipseMode(RADIUS);
         fill("white");
+        ellipseMode(RADIUS);
         ellipse(ppos.x,ppos.y,this.r);
-        pop();
     }
 }
