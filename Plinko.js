@@ -3,8 +3,6 @@ class Plinko{
         var options = {
             isStatic:true
         }
-        this.x=x
-        this.y=y
         this.r=r
         this.body=Bodies.circle(this.x,this.y,this.r,options)
     }
