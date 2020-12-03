@@ -4,13 +4,13 @@ class Plinko{
             isStatic:true
         }
         this.r=r
-        this.body=Bodies.circle(this.x,this.y,this.r,options)
+        this.body=Bodies.circle(x,y,this.r,options)
     }
 
     display(){
         var ppos = this.body.position;
         fill("white");
         ellipseMode(RADIUS);
-        ellipse(ppos.x,ppos.y,this.r);
+        ellipse(ppos.x,ppos.y,this.r,this.r);
     }
 }
