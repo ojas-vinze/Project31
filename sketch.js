@@ -3,19 +3,19 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
-var divisionh = 300;
+var divisionh = 260;
 
 var divisions=[];
 var plinkos=[];
 var particles=[];
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(800,800);
 
   engine = Engine.create();
   world = engine.world;
   
-  ground = new Ground(width/2,height-5,width,5);
+  ground = new Ground(width/2,height-5,width,15);
 
   for(var k=0; k<=width; k= k+80){
     divisions.push(new Division(k,height-divisionh/2,10,divisionh));
@@ -39,25 +39,26 @@ function setup() {
 }
 
 function draw() {
-  background(255,255,255);  
-
+  background("black");
 
   if(frameCount%60===0){
-    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
-  }
+    particles.push(new Particle(random(100,700),10,10))
+  }  
 
-  // display all
-  for(var x=0; x<particles.length; x=x++){
+  // // display all
+  for(var x=0; x<particles.length; x++){
     particles[x].display();
   }
 
-  for(var y=0; y<plinkos.length; y=y++){
+  for(var y=0; y<plinkos.length; y++){
     plinkos[y].display();
   }
 
-  for(var z=0; z<particles.length; z=z++){
+  for(var z=0; z<divisions.length; z++){
     divisions[z].display();
   }
 
   ground.display();
+
+  Engine.update(engine);
 }
