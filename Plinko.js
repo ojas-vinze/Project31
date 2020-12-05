@@ -5,6 +5,7 @@ class Plinko{
         }
         this.r=r
         this.body=Bodies.circle(x,y,this.r,options)
+        World.add(world,this.body)
     }
 
     display(){
